@@ -1,0 +1,4 @@
+﻿  ServerS.cpp
+C:\Users\Khily\source\repos\ServerS\ServerS.cpp(61,29): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Khily\source\repos\ServerS\ServerS.cpp(66,79): warning C4312: приведение типов: преобразование из "int" в "LPVOID" большего размера
+  ServerS.vcxproj -> C:\Users\Khily\source\repos\ServerS\x64\Debug\ServerS.exe

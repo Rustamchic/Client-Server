@@ -1,0 +1,3 @@
+﻿  ClientC.cpp
+C:\Users\Khily\source\repos\ClientC\ClientC.cpp(51,30): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  ClientC.vcxproj -> C:\Users\Khily\source\repos\ClientC\x64\Debug\ClientC.exe
