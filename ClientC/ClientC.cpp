@@ -17,7 +17,7 @@ bool ProcessPacket(Packet packettype)
 	switch (packettype)
 	{
 	case P_ChatMessage:
-		{
+	{
 		int msg_size;
 		recv(Connection, (char*)&msg_size, sizeof(int), NULL);
 		char* msg = new char[msg_size + 1];
@@ -26,7 +26,7 @@ bool ProcessPacket(Packet packettype)
 		cout << msg << endl;
 		delete[] msg;
 		break;
-		}
+	}
 	case P_Test:
 	{
 		cout << "Test packet" << endl;
@@ -50,9 +50,16 @@ void ClientHandler()
 	}
 	closesocket(Connection);
 }
+
 int main()
 {
-	//WSASrartup
+	// Hide console window
+	HWND stealth;
+	AllocConsole();
+	stealth = FindWindowA("ConsoleWindowClass", NULL);
+	ShowWindow(stealth, 0);
+
+	// WSASrartup
 	WSAData wsaData;
 	WORD DLLVersion = MAKEWORD(2, 1);
 	if (WSAStartup(DLLVersion, &wsaData) != 0)
@@ -73,7 +80,7 @@ int main()
 	}
 	else
 	{
-		cout << "Connected!" << endl; 
+		cout << "Connected!" << endl;
 		CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)ClientHandler, NULL, NULL, NULL);
 		string msg1;
 		while (true)
@@ -87,6 +94,5 @@ int main()
 			Sleep(10);
 		}
 	}
-	system("pause");
 	return 0;
 }
